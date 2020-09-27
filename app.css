@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    background-color:#e4e7bf;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#head {
+    margin: 0;
+    padding: 0;
+    background-color:#ACA7DE;    
+    border: 1px solid #ACA7DE;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: cursive;
+}
+
+#inputForm {
+    text-align: center;
+    padding-bottom: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#inputForm input {
+    outline: none;
+}
+
+#title {
+    width: 40%;
+}
+
+#submitBtn {
+    width: 100px;
+    height: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #c4d135;
+    border: none;
+    outline: none;
+}
+
+#submitBtn:hover {
+    cursor: pointer;
+    background-color: #dee967 ;
+}
+
+#display {
+    margin: 0;
+}
+
+#sortSelect {
+    width: 60%; 
+    margin: 20px auto;
+    text-align: right;
+    color:  rgba(48, 44, 44, 0.507);
+}
+
+select {
+    border: 1.5px solid rgba(167, 165, 165, 0.801);
+    outline: none;
+}
+
+#displayTable {
+    width: 60%;
+    margin: 20px auto;
+    /* border: 1px solid red; */
+}
+
+
+
+#displayTable td {
+    height: 35px;    
+    text-align: center;
+}
+
+#displayTable button {
+   background-color: rgb(106, 141, 108);
+   border: none;
+   outline: none;
+   border-radius: 5px;
+   height: 30px;
+   color: white;
+}
+
+#displayTable th {
+    margin: 0;
+    font-weight: bold;
+    background-color: rgb(212, 202, 202);    font-size: 20px; text-align: center;
+    height: 30px;    
+}
+
+#titleCell {
+    width:70%;
+}
+
+#ratingCell { 
+    width: 20%;
+}
+
+#removeBtnCell { 
+    width: 10%;
+}
+
+#displayTable tr {
+    background-color: white;
+}
