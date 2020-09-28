@@ -7,8 +7,8 @@ body {
 #head {
     margin: 0;
     padding: 0;
-    background-color:#ACA7DE;    
-    border: 1px solid #ACA7DE;
+    background-color:#BACFD6;    
+    border: 1px solid#BACFD6; 
 }
 
 h1 {
@@ -26,6 +26,8 @@ h1 {
 
 #inputForm input {
     outline: none;
+    border-radius: 4px;
+    border: none;
 }
 
 #title {
@@ -38,14 +40,15 @@ h1 {
     margin-left: 20px;
     font-size: 20px;
     border-radius: 10px;
-    background-color: #c4d135;
+    background-color: rgb(106, 141, 108);
+    color: white;
     border: none;
     outline: none;
 }
 
 #submitBtn:hover {
     cursor: pointer;
-    background-color: #dee967 ;
+    background-color: #8eb887 ;
 }
 
 #display {
@@ -84,6 +87,11 @@ select {
    border-radius: 5px;
    height: 30px;
    color: white;
+}
+
+#displayTable button:hover {
+    cursor: pointer;
+    background-color: #8eb887 ;
 }
 
 #displayTable th {

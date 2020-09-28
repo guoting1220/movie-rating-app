@@ -2,11 +2,11 @@ const savedMoviesArr = (localStorage.getItem("movies")) ?
     JSON.parse(localStorage.getItem("movies")) : [];
 
 for (let movie of savedMoviesArr) {
-    addMovie(movie[0], movie[1]);
+    addMovieFromLocalstorage(movie[0], movie[1]);
 }    
 
 //function to add movie with rating and remove button
-function addMovie(titleVal, ratingVal) {
+function addMovieFromLocalstorage(titleVal, ratingVal) {
     $("#displayTable").append("<tr></tr>");
     $("#displayTable tr").last().append(`<td>${titleVal}</td>`)
         .append(`<td>${ratingVal}</td>`)
@@ -14,9 +14,10 @@ function addMovie(titleVal, ratingVal) {
 }
 
 // add event listener for submit button to add new movie to the DOM
+// update the localStorage at the same time
 $("form").on("submit", function(e){
     e.preventDefault();
-    addMovie($("#title").val(), $("#rating").val());  
+    addMovieFromLocalstorage($("#title").val(), $("#rating").val());  
     savedMoviesArr.push([$("#title").val(), $("#rating").val()]); 
     //update localStorage 
     localStorage.setItem("movies", JSON.stringify(savedMoviesArr));
@@ -52,16 +53,16 @@ $("#sort").on("click", function(e){
     }
     else if ($(e.target).val() === "ratingL-H") {
         $("#tHead").siblings().sort(function (a, b) {
-            let $a = $(a).children("td:nth-child(2)").text();
-            let $b = $(b).children("td:nth-child(2)").text();
+            let $a = parseInt($(a).children("td:nth-child(2)").text());
+            let $b = parseInt($(b).children("td:nth-child(2)").text());
             return ($a > $b) ? 1 : (($a < $b) ? -1 : 0);
         }).appendTo("#displayTable");
         savedMoviesArr.sort((x, y) => x[1] - y[1]);
     }
     else if($(e.target).val() === "ratingH-L") {
         $("#tHead").siblings().sort(function (a, b) {
-            let $a = $(a).children("td:nth-child(2)").text();
-            let $b = $(b).children("td:nth-child(2)").text();
+            let $a = parseInt($(a).children("td:nth-child(2)").text());
+            let $b = parseInt($(b).children("td:nth-child(2)").text());
             return ($a < $b) ? 1 : (($a > $b) ? -1 : 0);
         }).appendTo("#displayTable");
         savedMoviesArr.sort((x, y) => y[1] - x[1]);
